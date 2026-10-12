@@ -72,8 +72,13 @@ export const direction = [
       'Advanced ethical hacking course',
       'Red-team labs and a certification',
     ],
-    tools: ['Kali Linux', 'Metasploit', 'Aircrack-ng', 'Maltego'],
+    tools: ['Kali Linux', 'Metasploit', 'Aircrack-ng', 'Maltego'
+    ],
+    learningFrom: [
+          { name: 'Ethical Coders Hub', note: 'Hands-on ethical hacking courses', url: 'https://ethicalcodershub.com/' },
+    ],
   },
+
 ]
 
 // Long-term community goal, shown as a slim row under the two career tracks.
