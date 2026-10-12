@@ -55,6 +55,7 @@ export const direction = [
     learningFrom: [
       { name: 'Vlad Mihalcea', note: 'Java persistence & Hibernate performance', url: 'https://www.linkedin.com/in/vladmihalcea/' },
       { name: 'Eugen Paraschiv', note: 'Spring & Java, founder of Baeldung', url: 'https://www.linkedin.com/in/eugenparaschiv/' },
+      { name: 'Josh Long', note: 'Spring Developer Advocate, Java Champion', url: 'https://www.linkedin.com/in/joshlong/' },
     ],
   },
   {
