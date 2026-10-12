@@ -98,6 +98,7 @@ export const skills = [
   { group: 'Security', items: ['OAuth2', 'Single Sign-On', 'Keycloak', 'Snyk'] },
   { group: 'Testing & monitoring', items: ['JUnit', 'Mockito', 'Integration testing', 'ELK Stack', 'Grafana', 'Prometheus', 'CloudWatch'] },
   { group: 'APIs', items: ['REST', 'GraphQL', 'SOAP / XML', 'OpenAPI / Swagger', 'Feign Client'] },
+  { group: 'AI-assisted development', items: ['GitHub Copilot', 'Claude', 'AI pair programming', 'Code review & refactoring with AI', 'Prompt writing'] },
 ]
 
 // Dates follow the employers' reference letters.
