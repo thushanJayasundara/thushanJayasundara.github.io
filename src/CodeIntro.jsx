@@ -6,15 +6,15 @@ const VERSIONS = [
   {
     year: '2019',
     label: 'Java 8',
-    file: 'Abc.java',
-    cmd: '$ javac Abc.java && java Abc',
-    output: 'Hello, World!',
+    file: 'DayOne.java',
+    cmd: '$ javac DayOne.java && java DayOne',
+    output: 'Day 1 of Java',
     code: [
-      { t: 'public class', c: 'kw' }, { t: ' ' }, { t: 'Abc', c: 'type' }, { t: ' {\n    ' },
+      { t: 'public class', c: 'kw' }, { t: ' ' }, { t: 'DayOne', c: 'type' }, { t: ' {\n    ' },
       { t: 'public static void', c: 'kw' }, { t: ' ' }, { t: 'main', c: 'fn' }, { t: '(' },
       { t: 'String', c: 'type' }, { t: ' args[]) {\n        ' },
       { t: 'System', c: 'type' }, { t: '.out.' }, { t: 'println', c: 'fn' }, { t: '(' },
-      { t: '"Hello, World!"', c: 'str' }, { t: ');\n    }\n}' },
+      { t: '"Day 1 of Java"', c: 'str' }, { t: ');\n    }\n}' },
     ],
   },
   {
@@ -22,11 +22,11 @@ const VERSIONS = [
     label: 'Java 25',
     file: 'Main.java',
     cmd: '$ java Main.java',
-    output: "Hello, World! I'm Thushan.",
+    output: 'Day 2,700+. Still coding.',
     code: [
       { t: 'void', c: 'kw' }, { t: ' ' }, { t: 'main', c: 'fn' }, { t: '() {\n    ' },
       { t: 'IO', c: 'type' }, { t: '.' }, { t: 'println', c: 'fn' }, { t: '(' },
-      { t: '"Hello, World! I\'m Thushan."', c: 'str' }, { t: ');\n}' },
+      { t: '"Day 2,700+. Still coding."', c: 'str' }, { t: ');\n}' },
     ],
   },
 ]
@@ -118,7 +118,7 @@ export default function CodeIntro() {
         <span className="out-line">{ver.output}{ran && <span className="caret" />}</span>
       </div>
       <figcaption className="code-cap">
-        2019: my first Java program. Today: same idea, much less ceremony.
+        2019: day one with Java. Today: still coding, with a lot less boilerplate.
       </figcaption>
     </figure>
   )
