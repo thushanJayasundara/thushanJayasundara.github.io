@@ -100,7 +100,7 @@ export const skills = [
   { group: 'Architecture', items: ['Microservices', 'Domain-Driven Design', 'Hexagonal Architecture', 'SOLID', '12-Factor'] },
   { group: 'Messaging & cache', items: ['Apache Kafka', 'RabbitMQ', 'Redis', 'Ehcache'] },
   { group: 'Databases', items: ['MySQL / Aurora', 'DB2', 'Oracle', 'PostgreSQL', 'MongoDB', 'DynamoDB', 'Cassandra', 'Hibernate / JPA'] },
-  { group: 'Cloud & DevOps', items: ['AWS', 'Docker', 'Kubernetes', 'GitHub Actions', 'Jenkins', 'IBM WebSphere'] },
+  { group: 'Cloud & DevOps', items: ['AWS', 'Docker', 'Kubernetes', 'GitHub Actions', 'Jenkins', 'IBM WebSphere', 'Maven'] },
   { group: 'Security', items: ['OAuth2', 'Single Sign-On', 'Keycloak', 'Snyk'] },
   { group: 'Testing & monitoring', items: ['JUnit', 'Mockito', 'Integration testing', 'ELK Stack', 'Grafana', 'Prometheus', 'CloudWatch'] },
   { group: 'APIs', items: ['REST', 'GraphQL', 'SOAP / XML', 'OpenAPI / Swagger', 'Feign Client'] },
