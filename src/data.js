@@ -18,6 +18,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/thushan-jayasundara/",
     github: "https://github.com/thushanJayasundara",
     medium: "https://medium.com/@thushanjayasundara96",
+    coffee: "https://buymeacoffee.com/thushanjay5",
     cv: "Thushan_Jayasundara_CV.pdf",
   },
   // Leave it empty ('') to hide the counter.

@@ -116,7 +116,6 @@ export default function App() {
               <p className="hero-summary">{profile.summary}</p>
               <div className="hero-actions">
                 <a className="btn primary" href={`mailto:${contact.email}`}>Get in touch</a>
-                <a className="btn" href={contact.cv} download>Keep my CV <span aria-hidden="true">↓</span></a>
                 <a className="btn" href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
                 <a className="btn" href={contact.github} target="_blank" rel="noreferrer">GitHub</a>
                 <a className="btn" href={contact.medium} target="_blank" rel="noreferrer">Medium</a>
@@ -346,6 +345,10 @@ export default function App() {
             <div className="contact-item">
               <span className="eyebrow">Medium</span>
               <a href={contact.medium} target="_blank" rel="noreferrer" className="contact-value">@thushanjayasundara96</a>
+            </div>
+            <div className="contact-item">
+              <span className="eyebrow">Buy me a coffee</span>
+              <a href={contact.coffee} target="_blank" rel="noreferrer" className="contact-value">buymeacoffee.com/thushanjay5</a>
             </div>
           </div>
         </Section>
