@@ -231,6 +231,12 @@ export default function App() {
                 <ul className="tags">
                   {p.tags.map((t) => <li key={t}>{t}</li>)}
                 </ul>
+                {p.url && (
+                  <a className="project-link" href={p.url} target="_blank" rel="noreferrer">
+                    {p.linkLabel || "Visit product"} <span aria-hidden="true">↗</span>
+                    <span className="project-link-host">{new URL(p.url).hostname.replace(/^www\./, "")}</span>
+                  </a>
+                )}
               </article>
             ))}
           </div>

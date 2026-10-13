@@ -338,6 +338,8 @@ export const projects = [
     kind: "Education",
     text: "Classroom response system where teachers pose questions and students answer from their own phones or laptops, with analytics showing where the class is struggling.",
     tags: ["Spring Boot 3", "AWS", "Kubernetes", "Aurora MySQL"],
+    url: "https://www.pearson.com/en-us/higher-education/products-services/live-response.html",
+    linkLabel: "Visit product",
   },
   {
     name: "AirRetailer",
@@ -346,6 +348,7 @@ export const projects = [
     kind: "Airline retail",
     text: "IATA NDC-based corporate booking and expense platform for travel management companies and corporates, with global airline inventory through Amadeus.",
     tags: ["Java", "Spring WebFlux", "Kafka", "NDC 18.1", "Hibernate"],
+    url: "https://www.airbooking.com/",
   },
   {
     name: "Omni-channel Digital Banking",
@@ -354,6 +357,8 @@ export const projects = [
     kind: "Banking",
     text: "Digital banking platform for Sri Lanka's second-largest commercial bank, built by Silverlake Digital Economy (Malaysia), serving over 14 million customers.",
     tags: ["Java", "Spring", "DB2", "WebSphere", "RabbitMQ", "Jasper"],
+    url: "https://www.peoplesbank.lk/",
+    linkLabel: "Visit People's Bank",
   },
   {
     name: "Lankawe",
@@ -394,6 +399,8 @@ export const projects = [
     kind: "Banking",
     text: "Integrated software suite for finance companies and merchant banks: leasing, loans, savings, fixed deposits, treasury bills and general ledger.",
     tags: ["Java", "Struts", "Hibernate", "Oracle", "SOAP"],
+    url: "https://openarc.lk/",
+    linkLabel: "Visit OpenArc",
   },
   {
     name: "Attendance & Leave System",

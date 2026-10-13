@@ -426,3 +426,12 @@ button.btn { font: inherit; font-weight: 500; font-size: 0.95rem; background: tr
   .caret { animation: none; }
   * { transition: none !important; }
 }
+
+/* Link to a project's live product site */
+.project-link {
+  display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap;
+  margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line);
+  color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+}
+.project-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.project-link-host { margin-left: auto; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
