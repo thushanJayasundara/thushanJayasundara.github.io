@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import CodeIntro from './CodeIntro.jsx'
+import VisitCounter from './VisitCounter.jsx'
 
 // Each palette shows its own background and accent in the swatch.
 const PALETTES = [
@@ -135,8 +137,11 @@ export default function App() {
         </section>
 
         <Section id="about" label="About" title="Backend engineer, end to end">
-          <div className="about">
-            {profile.about.map((p, i) => <p key={i}>{p}</p>)}
+          <div className="about-grid">
+            <div className="about">
+              {profile.about.map((p, i) => <p key={i}>{p}</p>)}
+            </div>
+            <CodeIntro />
           </div>
         </Section>
 
@@ -351,6 +356,7 @@ export default function App() {
       <footer className="footer">
         <div className="wrap footer-inner">
           <span>© {new Date().getFullYear()} {profile.name}</span>
+          <VisitCounter />
           <span className="mono muted">Built with React</span>
         </div>
       </footer>
