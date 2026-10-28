@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import CodeIntro from './CodeIntro.jsx'
 import VisitCounter from './VisitCounter.jsx'
+import Blog from './blog/Blog.jsx'
 
 // Each palette shows its own background and accent in the swatch.
 const PALETTES = [
@@ -54,6 +55,21 @@ const NAV = [
   ['contact', 'Contact'],
 ]
 
+const HOME_TITLE = 'Thushan Jayasundara · Senior Software Engineer'
+
+// Hash routing keeps GitHub Pages happy: #/blog and #/blog/<slug> show the
+// blog; anything else (#about, #projects…) is the home page.
+function useRoute() {
+  const [hash, setHash] = useState(() => window.location.hash)
+  useEffect(() => {
+    const onChange = () => setHash(window.location.hash)
+    window.addEventListener('hashchange', onChange)
+    return () => window.removeEventListener('hashchange', onChange)
+  }, [])
+  const isBlog = hash === '#/blog' || hash.startsWith('#/blog/')
+  return { hash, isBlog, slug: isBlog ? hash.split('/')[2] || null : null }
+}
+
 function CopyButton({ value, label }) {
   const [done, setDone] = useState(false)
   const copy = async () => {
@@ -90,6 +106,17 @@ export default function App() {
   const { contact } = profile
   const [allArticles, setAllArticles] = useState(false)
   const visibleArticles = allArticles ? articles : articles.slice(0, ARTICLES_SHOWN)
+  const { hash, isBlog, slug } = useRoute()
+
+  // Blog pages open at the top. Coming back home with #section scrolls to it
+  // once the home page has rendered again.
+  useEffect(() => {
+    if (isBlog) { window.scrollTo(0, 0); return }
+    document.title = HOME_TITLE
+    const target = hash.length > 1 && document.getElementById(hash.slice(1))
+    if (target) target.scrollIntoView()
+  }, [hash, isBlog])
+
   return (
     <>
       <nav className="nav">
@@ -99,10 +126,18 @@ export default function App() {
             {NAV.map(([id, text]) => (
               <li key={id}><a href={`#${id}`}>{text}</a></li>
             ))}
+            <li className="nav-blog">
+              <a href="#/blog" aria-current={isBlog ? 'page' : undefined}>Blog</a>
+            </li>
           </ul>
         </div>
       </nav>
 
+      {isBlog ? (
+        <main className="wrap" id="top">
+          <Blog slug={slug} />
+        </main>
+      ) : (
       <main className="wrap" id="top">
         <section className="hero">
           <div className="hero-main">
@@ -271,6 +306,7 @@ export default function App() {
               </button>
             )}
             <a className="text-link" href={contact.medium} target="_blank" rel="noreferrer">Read on Medium ↗</a>
+            <a className="text-link" href="#/blog">Interactive notes on the blog →</a>
           </div>
         </Section>
 
@@ -359,6 +395,7 @@ export default function App() {
           </div>
         </Section>
       </main>
+      )}
 
       <ThemeSwitcher />
 
