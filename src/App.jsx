@@ -57,8 +57,9 @@ const NAV = [
 
 const HOME_TITLE = 'Thushan Jayasundara · Senior Software Engineer'
 
-// Hash routing keeps GitHub Pages happy: #/blog and #/blog/<slug> show the
-// blog; anything else (#about, #projects…) is the home page.
+// Hash routing keeps GitHub Pages happy: #/blog and anything under it
+// (#/blog/<topic>/<subtopic>/<post>) shows the blog; anything else
+// (#about, #projects…) is the home page.
 function useRoute() {
   const [hash, setHash] = useState(() => window.location.hash)
   useEffect(() => {
@@ -67,7 +68,8 @@ function useRoute() {
     return () => window.removeEventListener('hashchange', onChange)
   }, [])
   const isBlog = hash === '#/blog' || hash.startsWith('#/blog/')
-  return { hash, isBlog, slug: isBlog ? hash.split('/')[2] || null : null }
+  const path = isBlog ? hash.slice('#/blog'.length).split('/').filter(Boolean).map(decodeURIComponent) : []
+  return { hash, isBlog, path }
 }
 
 function CopyButton({ value, label }) {
@@ -106,7 +108,7 @@ export default function App() {
   const { contact } = profile
   const [allArticles, setAllArticles] = useState(false)
   const visibleArticles = allArticles ? articles : articles.slice(0, ARTICLES_SHOWN)
-  const { hash, isBlog, slug } = useRoute()
+  const { hash, isBlog, path } = useRoute()
 
   // Blog pages open at the top. Coming back home with #section scrolls to it
   // once the home page has rendered again.
@@ -134,8 +136,8 @@ export default function App() {
       </nav>
 
       {isBlog ? (
-        <main className="wrap" id="top">
-          <Blog slug={slug} />
+        <main className="wrap blog-wrap" id="top">
+          <Blog path={path} />
         </main>
       ) : (
       <main className="wrap" id="top">

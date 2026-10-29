@@ -1,7 +1,9 @@
 import QuickFindVisualizer from './QuickFindVisualizer.jsx'
 
-// Blog posts. Newest first. Each post is a slug, some metadata, and a
-// Body component. To add a post, add an entry here.
+// Blog posts. Each post is a slug, some metadata, and a Body component.
+// `topic` and `subtopic` are slugs from topics.js; that decides where the
+// post shows up. To add a post, add an entry here (and remove it from that
+// subtopic's roadmap in topics.js).
 
 function QuickFindPost() {
   return (
@@ -87,7 +89,9 @@ export const posts = [
     slug: 'quick-find',
     title: 'Quick-find: watching union-find run line by line',
     date: '2026-10-28',
-    topic: 'Algorithms · Java',
+    topic: 'algorithms',
+    subtopic: 'union-find',
+    tags: ['Java'],
     readTime: '5 min read',
     summary:
       'The simplest union-find algorithm, explained with an interactive simulator that runs the Java code from main, one line at a time.',
